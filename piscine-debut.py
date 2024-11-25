@@ -2,7 +2,7 @@ liste = [("Pierre","Dos",10),("Paul","Brasse",13),("Léa","Crawl",6), ("Léa","B
 commande = ''
 
 isAlive = True
-while commande != 'exit':
+while isAlive:
     commande = input("Que faut-il faire ? ")
 
     if commande == 'ajout':
@@ -18,7 +18,9 @@ while commande != 'exit':
         continue
 
     if commande == "exit":
-        isAlive = False
+        tmp = input("En êtes vous sûr ? (o)ui/(n)on")
+        if tmp == 'o':
+            isAlive = False
         continue
 
     print(f"Commande {commande} inconnue")
