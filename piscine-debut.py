@@ -25,3 +25,5 @@ while isAlive:
 
     print(f"Commande {commande} inconnue")
 
+print ('test')
+
