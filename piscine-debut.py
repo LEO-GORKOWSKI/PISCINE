@@ -1,6 +1,7 @@
 liste = [("Pierre","Dos",10),("Paul","Brasse",13),("Léa","Crawl",6), ("Léa","Brasse",8) ]
 commande = ''
 
+
 """Création de fonction"""
 def cmd_exit():
     tmp = input("En êtes vous sûr ? (o)ui/(n)on")
@@ -33,7 +34,6 @@ def cmd_nageur(liste):
         if elt[0]== tmp: 
             print(f"{elt[1]:8} / {elt[2]}")
      
-
 """Exécution des fonctions"""
 isAlive = True
 while isAlive:
