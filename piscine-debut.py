@@ -1,6 +1,7 @@
 liste = [("Pierre","Dos",10),("Paul","Brasse",13),("Léa","Crawl",6), ("Léa","Brasse",8) ]
 commande = ''
 
+"""Création de fonction"""
 def cmd_exit():
     tmp = input("En êtes vous sûr ? (o)ui/(n)on")
     if tmp == 'o':
@@ -33,6 +34,7 @@ def cmd_nageur(liste):
             print(f"{elt[1]:8} / {elt[2]}")
      
 
+"""Exécution des fonctions"""
 isAlive = True
 while isAlive:
     commande = input("Que faut-il faire ? ")
@@ -40,18 +42,16 @@ while isAlive:
         cmd_ajout(liste)
         continue
 
-
     if commande == 'liste':
         cmd_liste(liste)
         continue
-
 
     if commande == 'exit':
         isAlive = cmd_exit()
         continue
  
     if commande == 'nageur':
-         cmd_nageur()
+         cmd_nageur(liste)
          continue
 
     print(f"Commande {commande} inconnue")
