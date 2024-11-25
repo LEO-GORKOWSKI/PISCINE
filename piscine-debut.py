@@ -51,7 +51,7 @@ while isAlive:
         continue
  
     if commande == 'nageur':
-         cmd_nageur()
+         cmd_nageur(liste)
          continue
 
     print(f"Commande {commande} inconnue")
