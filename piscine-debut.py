@@ -3,18 +3,19 @@ liste = [("Pierre","Dos",10),("Paul","Brasse",13),("Léa","Crawl",6), ("Léa","B
 commande = ''  # Variable pour stocker la commande de l'utilisateur
 
 # Chargement des données depuis le fichier CSV
-fichier = open('save.csv', 'r')  # Ouvre le fichier en mode lecture
-for line in fichier:
-    line = line.strip()  # Supprime les espaces ou sauts de ligne en début/fin de ligne
-    if line[0] == '#':  # Ignore les lignes de commentaire commençant par '#'
-        continue
-    tmp = line.split(',')  # Divise la ligne en plusieurs parties séparées par des virgules
-    liste.append(tuple(tmp))  # Ajoute chaque ligne comme un tuple dans la liste
-fichier.close()  # Ferme le fichier après lecture
+def load(liste):
+    fichier = open('save.csv', 'r')  # Ouvre le fichier en mode lecture
+    for line in fichier:
+        line = line.strip()  # Supprime les espaces ou sauts de ligne en début/fin de ligne
+        if line[0] == '#':  # Ignore les lignes de commentaire commençant par '#'
+            continue
+        tmp = line.split(',')  # Divise la ligne en plusieurs parties séparées par des virgules
+        liste.append(tuple(tmp))  # Ajoute chaque ligne comme un tuple dans la liste
+    fichier.close()  # Ferme le fichier après lecture
 
 """ Création de toutes les fonctions pour effectuer des actions sur la liste """
 
-def sauvegarder(liste):
+def sauvegarder(liste,):
     """Sauvegarde les données dans un fichier CSV"""
     # Ouvre le fichier en mode écriture et sauvegarde chaque nageur sous forme de texte
     with open('save.csv', 'w') as fichier:
@@ -78,7 +79,15 @@ while isAlive:
     if commande == 'liste':
         cmd_liste(liste)  # Affiche tous les nageurs
         continue
+
+    if commande == 'save':
+        sauvegarder(liste) # Permet de sauvegarder la liste.
+        continue
     
+    if commande == 'load':
+        load(liste)
+        continue
+
     if commande == 'nageur':
         cmd_nageur(liste)  # Affiche les performances d'un nageur donné
         continue 
